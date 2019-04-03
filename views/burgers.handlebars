@@ -1,1 +1,18 @@
-<h1>Hello from Burger Land!</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Burger</th>
+      <th scope="col">EAT IT!</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each burgers}}
+    <tr>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.name}}</td>
+      <td><button class="eat-btn">Devour it!</button></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
