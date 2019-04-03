@@ -13,14 +13,14 @@ const orm = {
             cb(results);
         })       
     },
-    
+
 };
 
-orm.findAll("burgers", (data)=> console.table(data));
+// orm.findAll("burgers", (data)=> console.table(data));
 
-const myBurg = {
-    name: "Chicken Bacon Ranch"
-}
+// const myBurg = {
+//     name: "Chicken Bacon Ranch!"
+// }
 
-orm.create("burgers", myBurg, (data) => console.log(data));
+// orm.create("burgers", myBurg, (data) => console.log(data));
 module.exports = orm;

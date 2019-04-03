@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const exphbs  = require('express-handlebars');
-const orm = require('./config/orm')
 
 const PORT = process.env.PORT || 8080;
 
@@ -14,5 +13,9 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.render("burgers");
 })
+
+const burgerController = require("./controllers/burgersController.js");
+app.use(burgerController);
+
 
 app.listen(PORT, () => console.log(`App is running on http://localhost:${PORT}`))
