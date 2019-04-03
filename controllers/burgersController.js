@@ -10,8 +10,8 @@ router.get("/", (req, res)=> {
 });
 
 router.post("/api/burger", (req, res) => {
-    console.log(req.body);
-    burger.create([name], req.body.name, (data) => {
+    console.log(req.body.name);
+    burger.create(["name"], req.body.name, (data) => {
         res.json({
             message: "Burger Added!",
             data: data
