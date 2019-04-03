@@ -1,0 +1,29 @@
+{
+  "name": "scratch-burger",
+  "version": "1.0.0",
+  "description": "Burger from scratch",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KGorham05/scratch-burger.git"
+  },
+  "keywords": [
+    "MVC",
+    "CRUD"
+  ],
+  "author": "Kevin Gorham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KGorham05/scratch-burger/issues"
+  },
+  "homepage": "https://github.com/KGorham05/scratch-burger#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mysql": "^2.16.0"
+  }
+}
