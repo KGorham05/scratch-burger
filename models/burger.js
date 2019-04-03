@@ -11,7 +11,6 @@ const burger = {
            cb(data);
        }); 
     }
-    
 };
 
 // burger.findAll(data => console.table(data));

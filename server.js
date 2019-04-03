@@ -10,10 +10,6 @@ app.set('view engine', 'handlebars');
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.render("burgers");
-})
-
 const burgerController = require("./controllers/burgersController.js");
 app.use(burgerController);
 

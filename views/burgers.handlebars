@@ -1,18 +1,25 @@
 <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Burger</th>
-      <th scope="col">EAT IT!</th>
-    </tr>
-  </thead>
-  <tbody>
-      {{#each burgers}}
-    <tr>
-      <th scope="row">{{this.id}}</th>
-      <td>{{this.name}}</td>
-      <td><button class="eat-btn">Devour it!</button></td>
-    </tr>
-    {{/each}}
-  </tbody>
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Burger</th>
+            <th scope="col">EAT IT!</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each burgers}}
+        <tr>
+            <th scope="row">{{this.id}}</th>
+            <td>{{this.name}}</td>
+            <td><button class="eat-btn">Devour it!</button></td>
+        </tr>
+        {{/each}}
+    </tbody>
 </table>
+<form action="/api/burger" method="post">
+    <div class="form-group">
+        <label for="name">Burgers!</label>
+        <input type="text" class="form-control" id="name" placeholder="Add a burger you'd like to eat!" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Burger!</button>
+</form>
