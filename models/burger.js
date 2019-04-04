@@ -25,7 +25,7 @@ const burger = {
 //     eaten: true
 // }
 
-// burger.updateById(myBurg, 11, data => console.log(data));
+// burger.update(myBurg, 11, data => console.log(data));
 // burger.create(myBurg, (data) => console.log(data))
 
 
