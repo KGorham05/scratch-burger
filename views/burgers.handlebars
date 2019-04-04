@@ -16,10 +16,10 @@
         {{/each}}
     </tbody>
 </table>
-<form action="/api/burger" method="post">
+<form action="/api/burger" method="POST">
     <div class="form-group">
         <label for="name">Burgers!</label>
-        <input type="text" class="form-control" id="name" placeholder="Add a burger you'd like to eat!" required>
+        <input type="text" class="form-control" name="name" placeholder="Add a burger you'd like to eat!" required>
     </div>
     <button type="submit" class="btn btn-primary">Submit Burger!</button>
 </form>
