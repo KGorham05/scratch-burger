@@ -11,10 +11,11 @@ const burger = {
             cb(data);
         });
     },
-    update: function (recordAsObject, Id, cb) {
-        orm.update("burgers", recordAsObject, Id, (data) => {
-            cb(data);
-        })
+    update: function (recordAsObject, id, cb) {
+        orm.update("burgers", recordAsObject, id, (data) => cb(data));
+    },
+    delete: function (id, cb) {
+        orm.delete("burgers", id, (data) => cb(data));
     }
 };
 
@@ -26,7 +27,7 @@ const burger = {
 // }
 
 // burger.update(myBurg, 11, data => console.log(data));
-// burger.create(myBurg, (data) => console.log(data))
-
+// burger.create(myBurg, (data) => console.log(data));
+// burger.delete(2, (data) => console.log(data));
 
 module.exports = burger;
