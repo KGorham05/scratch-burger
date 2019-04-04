@@ -11,7 +11,7 @@ const burger = {
             cb(data);
         });
     },
-    update: function (recordAsObject, id, cb) {
+    eatIt: function (recordAsObject, id, cb) {
         orm.update("burgers", recordAsObject, id, (data) => cb(data));
     },
     delete: function (id, cb) {

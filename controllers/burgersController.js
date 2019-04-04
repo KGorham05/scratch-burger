@@ -15,15 +15,17 @@ router.post("/api/burger", (req, res) => {
     });
 });
 
-// NOT WORKING 
 router.put("/api/burger/:id", (req, res) => {
-
-    const data = {
+    const recAsObj = {
         eaten: true
     };
-    
-    burger.update(data, req.params.id, (data) => {
+    burger.eatIt(recAsObj, req.params.id, (data) => {
         res.json(data);
     })
-})
+});
+
+router.delete("/api/delete/:id", (req, res) => {
+    burger.delete(req.params.id, (data) => res.json(data))
+});
+
 module.exports = router;
