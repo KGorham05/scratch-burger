@@ -1,24 +1,31 @@
 const orm = require("../config/orm");
 
 const burger = {
-    findAll: function(cb) {
+    findAll: function (cb) {
         orm.findAll("burgers", (data) => {
             cb(data);
         })
     },
-    create: function(recordAsObject, cb) {
-       orm.create("burgers", recordAsObject, (data) => {
-           cb(data);
-       }); 
+    create: function (recordAsObject, cb) {
+        orm.create("burgers", recordAsObject, (data) => {
+            cb(data);
+        });
+    },
+    update: function (recordAsObject, Id, cb) {
+        orm.updateById("burgers", recordAsObject, Id, (data) => {
+            cb(data);
+        })
     }
 };
 
 // burger.findAll(data => console.table(data));
 
 // const myBurg = {
-//     name: "Pineapple Teriyaki Chicken Burger",
+//     name: "Chicken Ranch Burger!!!!",
+//     eaten: true
 // }
- 
+
+// burger.updateById(myBurg, 11, data => console.log(data));
 // burger.create(myBurg, (data) => console.log(data))
 
 

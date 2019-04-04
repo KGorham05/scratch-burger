@@ -10,9 +10,20 @@ router.get("/", (req, res)=> {
 });
 
 router.post("/api/burger", (req, res) => {
-    console.log(req.body);
     burger.create(req.body, (data) => {
         res.redirect("/");
     })
 });
+
+// NOT WORKING 
+router.put("/api/burger/:id", (req, res) => {
+
+    const data = {
+        eaten: true
+    };
+    
+    burger.update(data, req.params.id, (data) => {
+        res.json(data);
+    })
+})
 module.exports = router;
