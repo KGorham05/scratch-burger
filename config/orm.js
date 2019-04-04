@@ -13,20 +13,28 @@ const orm = {
             cb(results);
         })       
     },
-    updateById: function(tableName, recordAsObject, id, cb) {
+    update: function(tableName, recordAsObject, id, cb) {
         connection.query("UPDATE ?? SET ? WHERE id = ?", [tableName, recordAsObject, id], (err, result) => {
             if (err) throw err;
             cb(result)
         })
+    },
+    delete: function(tableName, id, cb) {
+        connection.query(`DELETE FROM ?? WHERE id = ?`, [tableName, id], (err, result) => {
+            if (err) throw err;
+            cb(result);
+        })
     }
 };
 
-// orm.findAll("burgers", (data)=> console.table(data));
+
 
 // const myBurg = {
 //     name: "Chicken Bacon Ranch Burger!"
 // }
 
-// orm.updateById("burgers", myBurg, 11, (data) => console.log(data));
+// orm.findAll("burgers", (data)=> console.table(data));
 // orm.create("burgers", myBurg, (data) => console.log(data));
+// orm.update("burgers", myBurg, 11, (data) => console.log(data));
+// orm.delete("burgers", 1, (data) => console.log(data));
 module.exports = orm;

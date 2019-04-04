@@ -17,7 +17,7 @@
                 <tr>
                     <th scope="row">{{this.id}}</th>
                     <td>{{this.name}}</td>
-                    <td><button class="eat-btn" data-id={{this.id}}>Devour it!</button></td>
+                    <td><button class="eat-btn btn btn-success" data-id={{this.id}}>Devour it!</button></td>
                 </tr>
                 {{/unless}}
                 {{/each}}
@@ -41,7 +41,7 @@
                 <tr>
                     <th scope="row">{{this.id}}</th>
                     <td>{{this.name}}</td>
-                    <td><button class="delete-btn" data-id={{this.id}}>Delete This Burger</button></td>
+                    <td><button class="delete-btn btn btn-danger" data-id={{this.id}}>Delete This Burger</button></td>
                 </tr>
                 {{/if}}
                 {{/each}}

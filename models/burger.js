@@ -12,7 +12,7 @@ const burger = {
         });
     },
     update: function (recordAsObject, Id, cb) {
-        orm.updateById("burgers", recordAsObject, Id, (data) => {
+        orm.update("burgers", recordAsObject, Id, (data) => {
             cb(data);
         })
     }
