@@ -1,59 +1,62 @@
-<div class="row">
-    {{!-- first column --}}
-    <div class="col-md-6">
-        <h2>Delicious Burgers</h2>
+<div class="container">
+    <div class="row text-center">
+        {{!-- first column --}}
+        <div class="col-md-6 card">
+            <h2>Delicious Burgers</h2>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Id #</th>
-                    <th scope="col">Burger</th>
-                    <th scope="col">EAT IT!</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each burgers}}
-                {{#unless eaten}}
-                <tr>
-                    <th scope="row">{{this.id}}</th>
-                    <td>{{this.name}}</td>
-                    <td><button class="eat-btn btn btn-success" data-id={{this.id}}>Devour it!</button></td>
-                </tr>
-                {{/unless}}
-                {{/each}}
-            </tbody>
-        </table>
+            <table class="table card-body">
+                <thead>
+                    <tr>
+                        <th scope="col">Id #</th>
+                        <th scope="col">Burger</th>
+                        <th scope="col">EAT IT!</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each burgers}}
+                    {{#unless eaten}}
+                    <tr>
+                        <th scope="row">{{this.id}}</th>
+                        <td>{{this.name}}</td>
+                        <td><button class="eat-btn btn btn-success" data-id={{this.id}}>Devour it!</button></td>
+                    </tr>
+                    {{/unless}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{!-- 2nd Column  --}}
+        <div class="col-md-6 card">
+            <h2>Devoured Burgers</h2>
+
+            <table class="table card-body">
+                <thead>
+                    <tr>
+                        <th scope="col">Id #</th>
+                        <th scope="col">Burger</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each burgers}}
+                    {{#if eaten}}
+                    <tr>
+                        <th scope="row">{{this.id}}</th>
+                        <td>{{this.name}}</td>
+                        <td><button class="delete-btn btn btn-danger" id="delete" data-id={{this.id}}>Delete
+                                Forever</button></td>
+                    </tr>
+                    {{/if}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
     </div>
-    {{!-- 2nd Column  --}}
-    <div class="col-md-6">
-        <h2>Devoured Burgers</h2>
-
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Id #</th>
-                    <th scope="col">Burger</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each burgers}}
-                {{#if eaten}}
-                <tr>
-                    <th scope="row">{{this.id}}</th>
-                    <td>{{this.name}}</td>
-                    <td><button class="delete-btn btn btn-danger" id="delete" data-id={{this.id}}>Delete Forever</button></td>
-                </tr>
-                {{/if}}
-                {{/each}}
-            </tbody>
-        </table>
-    </div>
-
 </div>
+
 
 <form action="/api/burger" method="POST">
     <div class="form-group">
-        <label for="name">Burgers!</label>
         <input type="text" class="form-control" name="name" placeholder="Add a burger you'd like to eat!" required>
     </div>
     <button type="submit" class="btn btn-primary">Submit Burger!</button>
